@@ -107,7 +107,10 @@ cc_library_static {
     },
 
     defaults: ["libc_defaults"],
-    cflags: ["-fno-stack-protector"],
+    cflags: [
+	"-fno-stack-protector",
+	"-O3",
+    ],
     name: "libc_stack_protector",
 }
 
@@ -120,14 +123,20 @@ cc_library_static {
     name: "libc_init_static",
     defaults: ["libc_defaults"],
     srcs: ["bionic/libc_init_static.cpp"],
-    cflags: ["-fno-stack-protector"],
+    cflags: [
+	"-fno-stack-protector",
+	"-O3",
+    ],
 }
 
 cc_library_static {
     name: "libc_init_dynamic",
     defaults: ["libc_defaults"],
     srcs: ["bionic/libc_init_dynamic.cpp"],
-    cflags: ["-fno-stack-protector"],
+    cflags: [
+	"-fno-stack-protector",
+	"-O3",
+    ],
 }
 
 // ========================================================
